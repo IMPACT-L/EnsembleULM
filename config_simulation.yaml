@@ -1,0 +1,29 @@
+simulation: true
+invivo: false
+
+predictions_path: "./data/Simulation Predictions/"
+predictions_name:                    # list of prediction files to use
+  - "Slice2DEDETRpred_dict_BBs.json"
+  - "Slice4DEDETRpred_dict_BBs.json"
+  - "Slice6DEDETRpred_dict_BBs.json"
+  - "Slice9DEDETRpred_dict_BBs.json"
+  - "Slice12DEDETRpred_dict_BBs.json"
+
+gt_data_path: "./data/metadata/gt_scat_inside1.txt"      # only used if simulation is true
+metadata_path: "./data/metadata/metadata_simu1.mat"
+output_path: "./data/outputs/Simulation"
+
+img_width: 512
+img_height: 512
+
+adaptive_iou_thresh: False
+iou_thresh: 0.2
+
+num_frames: 101                 # total frames in the clip
+weights: [.1, .8, .7, .6, .5]  # model-specific confidence weights
+
+# Hyper-parameters for Soft-NMS & WBF
+skip_box_thr: 0.001
+sigma: 0.1
+
+threshold_each_model: false # if true, threshold each model separately to filter out low-confidence detections.

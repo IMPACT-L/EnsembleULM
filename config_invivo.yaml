@@ -1,0 +1,33 @@
+#Configuration Settings
+simulation: false
+invivo: true
+
+# Data Paths
+predictions_path: "./data/Invivo Predictions/"
+predictions_name:
+  - "pred_dict_BBs_Slice2.json"
+  - "pred_dict_BBs_Slice4.json"
+  - "pred_dict_BBs_Slice6.json"
+  - "pred_dict_BBs_Slice9.json"
+  - "pred_dict_BBs_Slice12.json"
+
+gt_data_path: "./data/metadata/gt_scat_inside1.txt"  # only used if simulation is true
+metadata_path: "./data/metadata/metadata_invivo.mat"
+output_path: "./data/outputs/In vivo"
+
+# Image Dimensions
+img_width: 126
+img_height: 166
+
+# Detection Parameters
+adaptive_iou_thresh: false
+iou_thresh: 0.2
+num_frames: 8000
+weights: [0.1, 0.8, 0.7, 0.6, 0.5]  # model-specific confidence weights
+
+# Algorithm Hyperparameters
+skip_box_thr: 0.01  # threshold for Soft-NMS & WBF
+sigma: 0.1          # sigma parameter for Soft-NMS & WBF
+
+# Processing Options
+threshold_each_model: false  # threshold each model separately to filter low-confidence detections
