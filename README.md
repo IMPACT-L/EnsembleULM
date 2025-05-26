@@ -27,14 +27,16 @@
 
 ```
 .
-├── src/                    # Core Python code (this repo)
-│   ├── utils/              # Helper modules (thresholding, JSON → boxes, …)
-│   └── ensemble_ulm.py     # Main script with adaptive fusion pipeline
-├── data/
-│   ├── Simulation Predictions/        # JSON outputs of individual models
-|	├── Invivo Predictions/        # JSON outputs of individual models
-|	├── outputs/        # JSON outputs of individual models
-│   └── metadata/           # .mat or .h5 files with simulation grid info
+├── ensemble_ulm.py     # Main script with adaptive fusion pipeline
+│   ├── utils/   # Helper modules (thresholding, JSON → boxes, …)
+│   │   ├── json2boxes.py
+│   │   ├── thresholding.py
+│   │   └── dynamic_ensemble.py           
+├── ├── data/
+│      ├── Simulation Predictions/        # JSON outputs of individual models
+|      ├── Invivo Predictions/        # JSON outputs of individual models
+|      ├── outputs/        # JSON outputs of individual models
+│      └── metadata/           # .mat or .h5 files with simulation grid info
 ├── config_invivo.yaml      # Central configuration file for invivo data
 ├── config_simulation.yaml      # Central configuration file for simulation data
 ├── requirements.txt
